@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: product-service
+  datasource:
+    # PostgreSQL
+    url: jdbc:postgresql://localhost:5432/db_product
+    username: postgres
+    password:
+  #drop n create table
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+security:
+  oauth2:
+    resource:
+      filter-order: 3
+
+  signing-key: MaYzkSjmkzPC57L
+  encoding-strength: 256
+  security-realm: Spring Boot JWT Example Realm
+
+  jwt:
+    client-id: afris
+    client-secret: 12345
+    grant-type: password
+    scope-read: read
+    scope-write: write
+    resource-ids: testjwtresourceid
+
+server:
+  port: 8282
+
+http:
+  response:
+    ok : success
+
